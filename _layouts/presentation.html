@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>{{page.title}}</title>
+
+		<link rel="stylesheet" href="{{site.baseurl}}/reveal.js/css/reveal.css">
+
+                {% if page.reveal.theme != nil %}
+		<link rel="stylesheet" href="{{page.reveal.theme}}">
+                {% endif %}
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="{{site.baseurl}}/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '{{site.baseurl}}/reveal.js/css/print/pdf.css' : '{{site.baseurl}}/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+                          {{content}}
+                          
+			</div>
+		</div>
+
+		<script src="{{site.baseurl}}/reveal.js/lib/js/head.min.js"></script>
+		<script src="{{site.baseurl}}/reveal.js/js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+                        controls: false,
+                        center: false,
+                        history: true,
+                        slideNumber: true,
+                        transition: 'none',
+                        math: {
+                        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+                        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                        },
+				dependencies: [
+					{ src: '{{site.baseurl}}/reveal.js/plugin/markdown/marked.js' },
+					{ src: '{{site.baseurl}}/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '{{site.baseurl}}/reveal.js/plugin/notes/notes.js', async: true },
+                                        { src: '{{site.baseurl}}/reveal.js/plugin/math/math.js', async: true },
+					{ src: '{{site.baseurl}}/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
