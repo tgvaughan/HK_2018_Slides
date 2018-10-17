@@ -1,5 +1,5 @@
 ---
-title: Flexible phylodynamic inferrence of prevalence dynamics using Particle Filtering
+title: Bayesian Phylodynamics
 layout: presentation
 reveal:
     theme: theme.css
@@ -30,18 +30,29 @@ reveal:
   <h1>From tree priors...</h1>
 
   <ul>
-    <li>In the first lecture on Bayesian phylogenetics, we (Veronika) briefly mentioned the role of tree-generating models.</li>
+    <li>In the first lecture on Bayesian phylogenetics, we briefly mentioned the role of tree-generating models.</li>
   </ul>
+
+  <img data-src="Data_generation.svg" style="width:80%;text-align:center">
+
+  <div style="position:relative;width:100%;height:300px;margin-top:50px">
+    <img data-src="Posterior_treeprior_nohl.svg"
+         style="width:100%;position:absolute;left:0;right:0"
+         class="fragment">
+  <img data-src="Posterior_treeprior.svg"
+       style="width:100%;background-color:white;position:absolute;left:0;right:0"
+       class="fragment">
+  </div>
 </section>
 
 <section>
 <h1>... to Phylodynamics</h1>
 
-<dl class="spaced">
+<dl class="spaced" style="margin-top:100px">
   <dt>Phylodynamics:</dt>
   <dd>the study of how ecological and evolutionary processes act/interact to shape the evolutionary history of pathogens (Grenfell et al., 2004; Volz et al., 2014).</dd>
 
-  <dt>Phylodynamic inference:</dt>
+  <dt data-spacing="1em">Phylodynamic inference:</dt>
   <dd>the statistical practice of inferring ecological/evolutionary dynamics from phylodynamic trees.</dd>
 </dl>
   
@@ -50,7 +61,7 @@ reveal:
 <section>
   <h1>Example: An emerging epidemic</h1>
 
-  <ul class="spaced">
+  <ul class="spaced" style="margin-top:100px;">
     <li>Consider a newly-emerging viral epidemic.</li>
 
     <li>Assume we have sequence data from which we can reconstruct a
