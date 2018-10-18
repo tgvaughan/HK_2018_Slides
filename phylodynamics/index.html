@@ -35,13 +35,9 @@ reveal:
 
   <img data-src="Data_generation.svg" style="width:80%;text-align:center">
 
-  <div style="position:relative;width:100%;height:300px;margin-top:50px">
-    <img data-src="Posterior_treeprior_nohl.svg"
-         style="width:100%;position:absolute;left:0;right:0"
-         class="fragment">
-  <img data-src="Posterior_treeprior.svg"
-       style="width:100%;background-color:white;position:absolute;left:0;right:0"
-       class="fragment">
+  <div class="flipper" style="height:300px;margin-top:50px">
+    <img data-src="Posterior_treeprior_nohl.svg" class="fragment">
+    <img data-src="Posterior_treeprior.svg" class="fragment">
   </div>
 </section>
 
@@ -72,12 +68,63 @@ reveal:
   </ul>
 </section>
 
+<section class="center">
+  <div class="flipper" style="margin-top:100px">
+    <img data-src="example_epidemic1.svg">
+    <img data-src="example_epidemic2.svg" class="fragment">
+    <img data-src="example_epidemic3.svg" class="fragment">
+    <img data-src="example_epidemic4.svg" class="fragment">
+    <img data-src="example_epidemic5.svg" class="fragment">
+  </div>
+
+</section>
+
 <section>
   <h1>The need for phylodynamic models</h1>
+
+  <ul class="spaced" style="margin-top:10%">
+    <li class="fragment">Phylogenies only contain the ancestry of the
+    individuals we sample.</li>
+
+    <li class="fragment" style="margin-top:10%">We therefore need a
+    statistical model that will allow us to infer the
+      most probable epidemic dynamics and parameters given an incomplete phylogeny.</li>
+  </ul>
 </section>
 
 <section>
   <h1>Classes of phylodynamic models</h1>
+
+  <ul>
+    <li class="fragment">Coalescent models
+      <ul>
+        <li class="fragment">Originally developed by John Kigman in a series of papers in 1982.</li>
+        <li class="fragment">Extensions for dynamics and structured populations introduced by several authors.</li>
+      </ul>
+    </li>
+
+    <li class="fragment" style="margin-top:5%">Birth-death models
+      <ul>
+        <li class="fragment">Theory for
+        completely sampled contemporaneous trees developed by
+        Elizabeth Thompson in her 1975 book "Human Evolutionary
+        Trees".</li>
+        <li class="fragment">Theory for trees conditioned on number of samples and extensions to incomplete sampling, sampling through time, structured populations, etc. developed by Tanja Stadler from 2008.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="center">
+
+  <img data-src="sampled_tree.svg" style="width:100%">
+
+</section>
+
+<section class="center">
+
+  <h1>Questions?</h1>
+
 </section>
 
 

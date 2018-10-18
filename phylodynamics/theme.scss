@@ -122,3 +122,18 @@ section.titlepage .date {
     font-size: 1.0em;
     white-space: nowrap
 }
+
+
+.reveal div.flipper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.reveal div.flipper > img {
+    position: absolute;
+    background-color: $backgroundColor;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
