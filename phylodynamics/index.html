@@ -358,7 +358,7 @@ reveal:
                   { 
                       margin: { t: 0 },
                       xaxis: {title: "N"},
-                      yaxis: {title: "L(T|N)"},
+                      yaxis: {title: "log L(N|T)"},
                       font: {size: 20}
                   },
                   {displayModeBar: false});
@@ -456,27 +456,60 @@ reveal:
 </section>
 
 <section>
-  <h1>Nonparametric approaches</h1>
+  <h1>Non-parametric: Skyline plot</h1>
+
+  <center>
+  <div class="flipper" style="width:80%;height:550px;text-align:center">
+    <img data-src="skyline_schematic1.svg" style="width:100%">
+    <img data-src="skyline_schematic2.svg" style="width:100%" class="fragment">
+  </div>
+  </center>
+  <ul style="margin-top:-2em" class="fragment">
+    <li>Due to <a href="" class="cite">Pybus, Rambaut and Harvey, 2000</a>.</li>
+    <li>Directly yields ML estimates of population size in each interval.</li>
+  </ul>
+  
 </section>
 
 <section>
   <h1>Bayesian skyline</h1>
 
   <ul class="spaced" style="margin-top:5%">
-    <li>Assumes that the population size can only change at a fixed number of break point. Each time iterval should contain several coalescent intervals.</li>
+    <li>Piecewise-constant population model: population size can only
+    change at a fixed number of break points. Each time iterval can
+    contain several coalescent intervals.</li>
 
     <li>Uses MCMC to integrate over all possible break point positions in addition to $N_e$ within each time interval.</li>
 
-    <li>Produces smoothed estimates of $N_e$ over time with credible intervals.</li>
+    <li>Graphs of marginal probability of population size vs time
+    appear smoothed due to averaging over possible histories.</li>
   </ul>
 </section>
 
 <section>
   <h1>Example: $N_e$ for HCV in Egypt</h1>
+
+  <center>
+    <img data-src="hcv_bsp.gif" style="width:60%">
+
+    <div style="text-align:right;width:60%">
+      <a href="" class="cite">Drummond et al., 2005</a>
+    </div>
+  </center>
+  
 </section>
 
 <section>
   <h1>Example: $N_e$ for influenza (H3N2)</h1>
+
+  <center>
+    <img data-src="flu_bsp.jpg" style="width:80%">
+
+    <div style="text-align:right;width:80%" >
+      <a href="" class="cite">Rambaut et al., 2008</a>
+    </div>
+  </center>
+  
 </section>
 
 <section>
@@ -490,7 +523,11 @@ reveal:
 <section class="center">
   <h1>Questions?</h1>
 </section>
-  
+
+<section class="center">
+  <h1>Birth-death models in phylodynamics</h1>
+</section>
+
 <!--
 * What is phylodynamics?
 * Example application
