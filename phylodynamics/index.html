@@ -417,22 +417,66 @@ reveal:
 
 <section>
   <h1>Extension: population size changes</h1>
+
+  <div>
+    <img data-src="WFpopDyn.jpg">
+    <a href="" class="cite">K&uuml;hnert et al., 2011</a>
 </section>
 
 <section>
-  <h1>Probability of a coalescent tree</h1>
+  <h1>Estimating population growth</h1>
+
+  <ul>
+    <li>The coalescent can be extended to accommodate time-varying population sizes.</li>
+  </ul>
+
+  <div style="display:inline-block;vertical-align:top;height:275px">
+    <img data-src="HCV_growth_title.png">
+  </div>
+  <div style="display:inline-block;vertical-align:top;height:275px">
+    <img data-src="HCV_growth_figure.png">
+  </div>
+
+  <div style="display:inline-block;vertical-align:middle;width:80%">
+    <img data-src="HCV_growth_table.png">
+  </div>
+  
 </section>
 
 <section>
-  <h1>Assumptions of time-dependent coalescent</h1>
+  <h1>Modeling population size changes</h1>
+
+  <ul class="spaced" style="margin-top:10%">
+    <li>Parametric models assume population size changes according to
+    some deterministic function of time (e.g. exponential
+    growth).</li>
+    <li>Non-parametric models allow population size to change over
+    time in a relatively unconstrained manner.</li>
+  </ul>
 </section>
 
 <section>
-  <h1>Example application</h1>
+  <h1>Nonparametric approaches</h1>
 </section>
 
 <section>
-  <h1>Non-parametric models: Skyline plots</h1>
+  <h1>Bayesian skyline</h1>
+
+  <ul class="spaced" style="margin-top:5%">
+    <li>Assumes that the population size can only change at a fixed number of break point. Each time iterval should contain several coalescent intervals.</li>
+
+    <li>Uses MCMC to integrate over all possible break point positions in addition to $N_e$ within each time interval.</li>
+
+    <li>Produces smoothed estimates of $N_e$ over time with credible intervals.</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Example: $N_e$ for HCV in Egypt</h1>
+</section>
+
+<section>
+  <h1>Example: $N_e$ for influenza (H3N2)</h1>
 </section>
 
 <section>
