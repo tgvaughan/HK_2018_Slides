@@ -205,24 +205,109 @@ reveal:
   
   <p class="fragment">
     Probability of coalescence in generation $i-m$:
-    \begin{equation}
-    P(m)=(1-p_{\textrm{coal}})^{m-1}p_{\textrm{coal}}
-    \end{equation}
+    $P(m)=(1-p_{\textrm{coal}})^{m-1}p_{\textrm{coal}}$
+  </p>
+
+  <p class="fragment">
+    Continuous time limit (large $N$, small $g$): $P(t)=e^{-\frac{1}{Ng}t}\frac{1}{Ng}$
   </p>
 
   <!-- properties: geometric distribution -->
 </section>
 
 <section>
+  <h1>The exponential distribution</h1>
+
+
+  <div id="expDistPlot" style="width:1000px;height:500px">
+    <script>
+      target = document.getElementById('expDistPlot');
+
+      var tarr = [];
+      var p1 = [];
+      var p2 = [];
+      var p3 = [];
+      var tmax = 3.0;
+      for (var t=0; t<=tmax; t+= tmax/500) {
+          tarr.push(t);
+          p3.push(Math.exp(-2*t)*2);
+          p1.push(Math.exp(-t));
+          p2.push(Math.exp(-0.5*t)*0.5);
+      }
+
+      var trace1 = {x: tarr, y: p1, name: 'Ng=0.5', line: {width: 4}};
+      var trace2 = {x: tarr, y: p2, name: 'Ng=1', line: {width: 4}};
+      var trace3 = {x: tarr, y: p3, name: 'Ng=2', line: {width: 4}};
+
+      Plotly.plot(target,
+                  [trace1, trace2, trace3],
+                  { 
+                      margin: { t: 0 },
+                      xaxis: {title: "Time before present"},
+                      yaxis: {title: "Probability density"},
+                      font: {size: 20}
+                  },
+                  {displayModeBar: false});
+    </script>
+  </div>
+</section>
+
+<section>
+
   <h1>Sampled k-individual phylogeny</h1>
+  <div class="flipper" style="height:400px">
+    <img data-src="WF3sampCoal1.svg">
+    <img data-src="WF3sampCoal2.svg" class="fragment">
+    <img data-src="WF3sampCoal3.svg" class="fragment">
+    <img data-src="WF3sampCoal4.svg" class="fragment">
+  </div>
+
+  <p class="fragment">
+    <b>Question:</b> How can this be generalized to $k$ samples?
+  </p>
+  <p class="fragment">
+    <b>Answer:</b> $p_{\text{coal}}=\frac{k(k-1)}{2}\frac{1}{N}=\binom{k}{2}\frac{1}{N}$
+  </p>
+
 </section>
 
 <section>
   <h1>Kingman's coalescent</h1>
+
+  <div style="display:inline-block;vertical-align:middle;width:60%" class="spaced">
+    <ul>
+      <li>Backward-time Markov process which produces 
+        sampled time trees.</li>
+      <li>Equivalent to sampled trees produced by WF
+        model when $N\gg k$ and $g\ll 1$.</li>
+      <li>Times between coalescence events drawn
+        from exponential distributions with rate $\binom{k}{2}\frac{1}{Ng}$.</li>
+      <li>Interesting: expected time to MRCA is always $\leq \frac{2}{Ng}$, regardless of how many samples there are.</li>
+    </ul>
+  </div>
+  <div style="display:inline-block;vertical-align:middle;width:39%">
+    <img data-src="simulated_coal_trees.svg">
+  </div>
 </section>
 
 <section>
   <h1>Effective population size</h1>
+
+  <ul>
+    <li>If a real population were described precisely by a Wright-Fisher model with generation time $g$, the $N$ parameter in the coalescent would correspond to the real population size.</li>
+    <li>However, real populations are more complicated:
+      <ul>
+        <li>Random mating assumption is often violated,</li>
+        <li>Offspring distribution may differ from that assumed by WF,</li>
+        <li>Generations may be overlapping,</li>
+        <li>...</li>
+      </ul>
+      <li>We therefore define the <b>effective population size</b>
+      $N_e$ to be the size of a statistically equivalent WF population.
+      (We often also absorb other parameters such as $g$, the clock
+      rate and ploidy into this number.)</li>
+  </ul>
+  
 </section>
 
 <section>
