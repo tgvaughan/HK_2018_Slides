@@ -528,6 +528,98 @@ reveal:
   <h1>Birth-death models in phylodynamics</h1>
 </section>
 
+<section class="center">
+  <h1>Questions?</h1>
+</section>
+
+<section class="center">
+  <h1>Birth-death vs Coalescent models</h1>
+  <h3 class="fragment">How do I choose?</h3>
+</section>
+
+<section>
+  <h1>Hepatitis C in Egypt</h1>
+</section>
+
+<section>
+  <div style="margin-top:10%">
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h1>Birth-death</h1>
+      <ul class="spaced">
+        <li>Parameters: transmission rates, removal rates, sampling rates/proportions</li>
+        <li>Models sampling process (sample times/locations are data)</li>
+      </ul>
+    </div>
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h1>Coalescent</h1>
+      <ul class="spaced">
+        <li>Parameters: effective population size (NOT actual population size)</li>
+        <li>Assumes number of sampled lineages small ($k\ll N$)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h1>Birth-death models</h1>
+
+  <div style="margin-top:10%">
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h3>Advantages</h3>
+
+      <ul>
+        <li>Accounts for stochastic variability in population dynamics.</li>
+        <li>Generally easier interpretation of parameters.</li>
+        <li>Uses information about sampling.</li>
+      </ul>
+    </div>
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h3>Disadvantages</h3>
+      <ul>
+        <li>Sensitive to unmodeled changes in sampling fractions.</li>
+        <li>Difficult to extend to complex population models.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <h1>Coalescent models</h1>
+
+  <div style="margin-top:10%">
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h3>Advantages</h3>
+
+      <ul>
+        <li>Generally fast tree prior calculations</li>
+        <li>Easy to extend to complex population dynamics (see Volz, 2012)</li>
+        <li>Naturally account for incomplete sampling.</li>
+      </ul>
+    </div>
+    <div style="display:inline-block;width:45%;vertical-align:top">
+      <h3>Disadvantages</h3>
+      <ul>
+        <li>Sensitive to uncertainty in population dynamics at high sampling (Boskova et al., 2014)</li>
+        <li>Sensitive to hidden population structure and nonrandom sampling.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h1>Conclusions</h1>
+
+  <ul class="spaced" style="margin-top:10%">
+    <li>Both birth-death and coalescent models probabilistically relate a population's demography to its phylogenetic history.</li>
+
+    <li>Both allow for model-based inference of demographic/epidemiological parameters but may differ in their parameterization.</li>
+
+    <li>Which model to use depends on what assumptions you are willing to make and what you want to infer.</li>
+  </ul>
+
+</section>
+
 <!--
 * What is phylodynamics?
 * Example application
@@ -548,7 +640,14 @@ reveal:
 
 - Question break -
 
-* Birth-death models of population dynamics (reaction formalism)
+* Birth-death-sampling models of population dynamics (reaction formalism)
 * Retrospective view
+* Derivation of p0, p1 ODEs.
+* FBD model (sampled ancestors, penguin example)
+* BDSKY model (HCV comparison)
+* Multi-type BD (Flu again)
 
+- Question break -
+
+* Pros and cons: coalescent vs birth-death
   -->
