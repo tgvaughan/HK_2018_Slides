@@ -528,6 +528,89 @@ reveal:
   <h1>Birth-death models in phylodynamics</h1>
 </section>
 
+<section>
+  <h1>Birth-death models of population dynamics</h1>
+
+  <ul>
+    <li>Population size described by a positive integer.</li>
+    <li>Changes through time according to a continuous time Markov process, similar to the substitution models we've already seen.</li>
+  </ul>
+  <p>Can use a chemical reaction notation to describe rates and effects of possible events:</p>
+  <dl>
+    <dt>Birth:</dt>
+    <dd>$$X\overset{\lambda}{\longrightarrow} 2X$$</dd>
+    <dt>Death:</dt>
+    <dd>$$X\overset{\mu}{\longrightarrow} 0$$</dd>
+  </dl>
+  <p>The parameters $\lambda$ and $\mu$ are probabilities per [time unit] that any given individual experiences a birth or a death.</p>
+
+</section>
+
+<section>
+  <h1>Example BD dynamics</h1>
+
+  <div id="bdExample" style="width:1000px; height:500px">
+    <script>
+      function simBD() {
+          target = document.getElementById('bdExample');
+
+          var lambda = 1.2;
+          var mu = 1.0;
+          var tmax=10.0;
+
+          var N = [1];
+          var t = [0.0];
+          while (true) {
+              var thisN = N[N.length-1];
+              var thist = t[t.length-1];
+              
+              var a_birth = lambda*thisN;
+              var a_death = mu*thisN;
+              var a0 = a_birth + a_death;
+
+              var dt;
+              if (a0>0.0)
+                  dt = -Math.log(Math.random())/a0;
+              else
+                  dt = Infinity
+
+              thist += dt;
+
+              if (thist>tmax) {
+                  t.push(tmax);
+                  N.push(thisN);
+                  break;
+              }
+
+              t.push(thist);
+
+              if (Math.random()*a0 < a_birth)
+                  N.push(thisN + 1);
+              else
+                  N.push(thisN - 1);
+          }
+
+          var trace = {x: t, y: N, line: {width: 2, shape: 'hv'}};
+
+          Plotly.newPlot(target,
+                         [trace],
+                         { 
+                             margin: { t: 0 },
+                             xaxis: {title: "Time"},
+                             yaxis: {title: "Population size"},
+                             font: {size: 20}
+                         },
+                         {displayModeBar: false});
+      }
+      simBD();
+     
+    </script>
+    <div style="text-align:right;font-size:0.5em">
+      <a href="" onclick="simBD(); return false;">Regenerate</a>
+    </div>
+  </div>
+</section>
+
 <section class="center">
   <h1>Questions?</h1>
 </section>
