@@ -748,12 +748,50 @@ reveal:
 <section>
   <h1>Sampled birth-death tree prior</h1>
 
+  <div style="text-align:right">
+    <img data-src="stadler2010.png">
+    <a href="" class="cite">Tanja Stadler, J. Theor. Biol., 2010</a>
+  </div>
+
+  $$P(T|\lambda,\mu,\psi,r,t_{or})=\lambda^{n+m-1}\psi^{k+m}(4\rho)^n\prod_{i=0}^{n+m-1}\frac{1}{q(x_i)}\prod_{i=1}^{m}p_0(y_i)q(y_i)$$
   
 </section>
 
 <section>
   <h1>Birth-death model assumptions</h1>
+
+  <ol class="spaced" style="margin-top:5%">
+    <li>Samples are members of a stochastically varying population that is on average exponentially growing with rate $\lambda-(\mu+r\psi)$.</li>
+
+    <li>Sample fraction can be small, large or complete - tree prior is still valid.</li>
+
+    <li>Sample number and times are assumed to be produced according to the model: deviation from this assumption results in biased inferences.</li>
+
+    <li>Population is "well mixed", samples are drawn randomly.</li>
+  </ol>
+    
 </section>
+
+<section>
+  <h1>Application: Penguin radiation</h1>
+
+  <center>
+    <img data-src="penguins.png" style="width:80%">
+  </center>
+  <div style="text-align:right">
+    <a href="" class="cite">Gavryushkina et al., 2017</a>
+  </div>
+  
+</section>
+<section>
+  <h1>Application: Penguin radiation</h1>
+
+  <center>
+  <img data-src="penguins_SA.png" style="width:60%">
+  </center>
+  
+</section>
+
 
 <section>
   <h1>Extention: time-dependence</h1>
@@ -765,12 +803,6 @@ reveal:
   <h1>Extension: structured populations</h1>
 
   <!-- BDMM -->
-</section>
-
-<section>
-  <h1>Extension: sampled ancestors</h1>
-
-  <!-- FBD process -->
 </section>
 
 <section class="center">
