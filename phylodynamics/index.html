@@ -153,10 +153,10 @@ reveal:
 
   <ul>
     <li>Discrete generations.</li>
-    <li>Individuals identical. (No structure.)</li>
-    <li>Fixed offspring distribution (mean of 1)</li>
-    <li>Constant + finite population size.</li>
-    <li>An interpretation: population at equilibrium (carrying capacity).</li>
+    <li class="fragment">Individuals identical. (No structure.)</li>
+    <li class="fragment">Fixed offspring distribution (mean of 1)</li>
+    <li class="fragment">Constant + finite population size.</li>
+    <li class="fragment">An interpretation: population at equilibrium (carrying capacity).</li>
   </ul>
 
 </section>
@@ -278,11 +278,11 @@ reveal:
     <ul>
       <li>Backward-time Markov process which produces 
         sampled time trees.</li>
-      <li>Equivalent to sampled trees produced by WF
+      <li class="fragment">Equivalent to sampled trees produced by WF
         model when $N\gg k$ and $g\ll 1$.</li>
-      <li>Times between coalescence events drawn
+      <li class="fragment">Times between coalescence events drawn
         from exponential distributions with rate $\binom{k}{2}\frac{1}{Ng}$.</li>
-      <li>Interesting: expected time to MRCA is always $\leq \frac{2}{Ng}$, regardless of how many samples there are.</li>
+      <li class="fragment">Interesting: expected time to MRCA is always $\leq \frac{2}{Ng}$, regardless of how many samples there are.</li>
     </ul>
   </div>
   <div style="display:inline-block;vertical-align:middle;width:39%">
@@ -295,14 +295,14 @@ reveal:
 
   <ul>
     <li>If a real population were described precisely by a Wright-Fisher model with generation time $g$, the $N$ parameter in the coalescent would correspond to the real population size.</li>
-    <li>However, real populations are more complicated:
+    <li class="fragment">However, real populations are more complicated:
       <ul>
         <li>Random mating assumption is often violated,</li>
         <li>Offspring distribution may differ from that assumed by WF,</li>
         <li>Generations may be overlapping,</li>
         <li>...</li>
       </ul>
-      <li>We therefore define the <b>effective population size</b>
+      <li class="fragment">We therefore define the <b>effective population size</b>
       $N_e$ to be the size of a statistically equivalent WF population.
       (We often also absorb other parameters such as $g$, the clock
       rate and ploidy into this number.)</li>
@@ -375,14 +375,14 @@ reveal:
 
   <ul>
     <li>The coalescent distribution/process is often derived as a limit of the Wright-Fisher process, as we have done here.</li>
-    <li>It also appears as the limit of many other population processes, for example
+    <li class="fragment">It also appears as the limit of many other population processes, for example
     <ul>
       <li>The Canning model (generalization of the Wright-Fisher model)</li>
       <li>The Moran model (overlapping generations, fixed population size)</li>
       <li>some stochastic logistic models (continuous time, population fluctuations)</li>
       <li>...</li>
     </ul>
-    <li>The fact that the coalescent distribution persists in the face
+    <li class="fragment">The fact that the coalescent distribution persists in the face
     of many departures from the WF model is sometimes termed the
     "robustness of the coalescent".</li>
   </ul>
@@ -392,12 +392,12 @@ reveal:
   <h1>General assumptions of the coalescent</h1>
 
   <ol class="spaced" style="margin-top:10%">
-    <li>Samples are members of a population that is at demographic equilibrium.</li>
-    <li>Number of samples is small compared to the total population size.
+    <li class="fragment">Samples are members of a population that is at demographic equilibrium.</li>
+    <li class="fragment">Number of samples is small compared to the total population size.
       <ul>
         <li>Necessary for WF-based derivation, not all derivations.</li>
       </ul>
-    <li>Population is "well mixed", samples are drawn randomly.</li>
+    <li class="fragment">Population is "well mixed", samples are drawn randomly.</li>
   </ol>
   </ol>
 </section>
@@ -461,10 +461,10 @@ reveal:
   <center>
   <div class="flipper" style="width:80%;height:550px;text-align:center">
     <img data-src="skyline_schematic1.svg" style="width:100%">
-    <img data-src="skyline_schematic2.svg" style="width:100%" class="fragment">
+    <img data-src="skyline_schematic2.svg" style="width:100%" class="fragment" data-fragment-index="2">
   </div>
   </center>
-  <ul style="margin-top:-2em" class="fragment">
+  <ul style="margin-top:-2em" class="fragment" data-fragment-index="2">
     <li>Due to <a href="" class="cite">Pybus, Rambaut and Harvey, 2000</a>.</li>
     <li>Directly yields ML estimates of population size in each interval.</li>
   </ul>
@@ -475,13 +475,13 @@ reveal:
   <h1>Bayesian skyline</h1>
 
   <ul class="spaced" style="margin-top:5%">
-    <li>Piecewise-constant population model: population size can only
+    <li class="fragment">Piecewise-constant population model: population size can only
     change at a fixed number of break points. Each time interval can
     contain several coalescent intervals.</li>
 
-    <li>Uses MCMC to integrate over all possible break point positions in addition to $N_e$ within each time interval.</li>
+    <li class="fragment">Uses MCMC to integrate over all possible break point positions in addition to $N_e$ within each time interval.</li>
 
-    <li>Graphs of marginal probability of population size vs time
+    <li class="fragment">Graphs of marginal probability of population size vs time
     appear smoothed due to averaging over possible histories.</li>
   </ul>
 </section>
@@ -533,11 +533,11 @@ reveal:
 
   <ul class="spaced">
     <li>Standard coalescent models assume that all lineages in a tree are exchangeable.</li>
-    <li>Exchangeability here means that any lineages is equally likely to coalesce with any other.</li>
-    <li>Many forms of population structure violate this assumption.</li>
+    <li class="fragment">Exchangeability here means that any lineages is equally likely to coalesce with any other.</li>
+    <li class="fragment">Many forms of population structure violate this assumption.</li>
   </ul>
 
-  <blockquote>
+  <blockquote class="fragment">
     $\therefore$ With the right model, we can learn about population structure from phylogenies!
   </blockquote>
 </section>
@@ -594,7 +594,6 @@ reveal:
 </section>
 
 
-
 <section class="center">
   <h1>Questions?</h1>
 </section>
@@ -604,20 +603,20 @@ reveal:
 </section>
 
 <section>
-  <h1>Birth-death models of population dynamics</h1>
+  <h1>Birth-death population dynamics</h1>
 
   <ul>
-    <li>Population size described by a positive integer.</li>
-    <li>Changes through time according to a continuous time Markov process, similar to the substitution models we've already seen.</li>
+    <li class="fragment">Population size described by a positive integer.</li>
+    <li class="fragment">Changes through time according to a continuous time Markov process, similar to the substitution models we've already seen.</li>
   </ul>
-  <p>Can use a chemical reaction notation to describe rates and effects of possible events:</p>
-  <dl>
+  <p class="fragment">Can use a chemical reaction notation to describe rates and effects of possible events:</p>
+  <dl class="fragment">
     <dt>Birth:</dt>
     <dd>$$X\overset{\lambda}{\longrightarrow} 2X$$</dd>
     <dt>Death:</dt>
     <dd>$$X\overset{\mu}{\longrightarrow} 0$$</dd>
   </dl>
-  <p>The parameters $\lambda$ and $\mu$ are probabilities per [time unit] that any given individual experiences a birth or a death.</p>
+  <p class="fragment">The parameters $\lambda$ and $\mu$ are probabilities per [time unit] that any given individual experiences a birth or a death.</p>
 
 </section>
 
@@ -764,8 +763,8 @@ reveal:
   <h1>Birth-death-sampling process</h1>
 
   <ul>
-    <li>The birth-death sampling process extends the birth-death process by incorporating a <b>model for sample generation</b>.</li>
-    <li>This can be described using the following reactions:
+    <li class="fragment">The birth-death sampling process extends the birth-death process by incorporating a <b>model for sample generation</b>.</li>
+    <li class="fragment">This can be described using the following reactions:
       <ul>
         <li><b style="padding-right:3em">Birth:</b> $X\overset{\lambda}{\longrightarrow}2X$</li>
         <li><b style="padding-right:3em">Death:</b> $X\overset{\mu}{\longrightarrow}0$</li>
@@ -774,7 +773,7 @@ reveal:
       </ul>
   </ul>
 
-  <p>Additionally, the model allows each surviving lineage at the end of the process (present day) to be sampled with probability $\rho$.</p>
+  <p class="fragment">Additionally, the model allows each surviving lineage at the end of the process (present day) to be sampled with probability $\rho$.</p>
 </section>
 
 <section>
@@ -828,7 +827,9 @@ reveal:
     <a href="" class="cite">Tanja Stadler, J. Theor. Biol., 2010</a>
   </div>
 
+  <div class="fragment">
   $$P(T|\lambda,\mu,\psi,r,t_{or})=\lambda^{n+m-1}\psi^{k+m}(4\rho)^n\prod_{i=0}^{n+m-1}\frac{1}{q(x_i)}\prod_{i=1}^{m}p_0(y_i)q(y_i)$$
+  </div>
   
 </section>
 
@@ -836,13 +837,13 @@ reveal:
   <h1>Birth-death model assumptions</h1>
 
   <ol class="spaced" style="margin-top:5%">
-    <li>Samples are members of a stochastically varying population that is on average exponentially growing with rate $\lambda-(\mu+r\psi)$.</li>
+    <li class="fragment">Samples are members of a stochastically varying population that is on average exponentially growing with rate $\lambda-(\mu+r\psi)$.</li>
 
-    <li>Sample fraction can be small, large or complete - tree prior is still valid.</li>
+    <li class="fragment">Sample fraction can be small, large or complete - tree prior is still valid.</li>
 
-    <li>Sample number and times are assumed to be produced according to the model: deviation from this assumption results in biased inferences.</li>
+    <li class="fragment">Sample number and times are assumed to be produced according to the model: deviation from this assumption results in biased inferences.</li>
 
-    <li>Population is "well mixed", samples are drawn randomly.</li>
+    <li class="fragment">Population is "well mixed", samples are drawn randomly.</li>
   </ol>
     
 </section>
@@ -939,15 +940,15 @@ reveal:
     <div style="display:inline-block;width:45%;vertical-align:top">
       <h1>Birth-death</h1>
       <ul class="spaced">
-        <li>Parameters: transmission rates, removal rates, sampling rates/proportions</li>
-        <li>Models sampling process (sample times/locations are data)</li>
+        <li class="fragment" data-fragment-index="1">Parameters: transmission rates, removal rates, sampling rates/proportions</li>
+        <li class="fragment" data-fragment-index="2">Models sampling process (sample times/locations are data)</li>
       </ul>
     </div>
     <div style="display:inline-block;width:45%;vertical-align:top">
       <h1>Coalescent</h1>
       <ul class="spaced">
-        <li>Parameters: effective population size (NOT actual population size)</li>
-        <li>Assumes number of sampled lineages small ($k\ll N$)</li>
+        <li class="fragment" data-fragment-index="1">Parameters: effective population size (NOT actual population size)</li>
+        <li class="fragment" data-fragment-index="2">Assumes number of sampled lineages small ($k\ll N$)</li>
       </ul>
     </div>
   </div>
@@ -961,16 +962,16 @@ reveal:
       <h3>Advantages</h3>
 
       <ul>
-        <li>Accounts for stochastic variability in population dynamics.</li>
-        <li>Generally easier interpretation of parameters.</li>
-        <li>Uses information about sampling.</li>
+        <li class="fragment">Accounts for stochastic variability in population dynamics.</li>
+        <li class="fragment">Generally easier interpretation of parameters.</li>
+        <li class="fragment">Uses information about sampling.</li>
       </ul>
     </div>
     <div style="display:inline-block;width:45%;vertical-align:top">
       <h3>Disadvantages</h3>
       <ul>
-        <li>Sensitive to unmodeled changes in sampling fractions.</li>
-        <li>Difficult to extend to complex population models.</li>
+        <li class="fragment">Sensitive to unmodeled changes in sampling fractions.</li>
+        <li class="fragment">Difficult to extend to complex population models.</li>
       </ul>
     </div>
   </div>
@@ -985,16 +986,16 @@ reveal:
       <h3>Advantages</h3>
 
       <ul>
-        <li>Generally fast tree prior calculations</li>
-        <li>Easy to extend to complex population dynamics (see Volz, 2012)</li>
-        <li>Naturally account for incomplete sampling.</li>
+        <li class="fragment">Generally fast tree prior calculations</li>
+        <li class="fragment">Easy to extend to complex population dynamics (see Volz, 2012)</li>
+        <li class="fragment">Naturally account for incomplete sampling.</li>
       </ul>
     </div>
     <div style="display:inline-block;width:45%;vertical-align:top">
       <h3>Disadvantages</h3>
       <ul>
-        <li>Sensitive to uncertainty in population dynamics at high sampling (Boskova et al., 2014)</li>
-        <li>Sensitive to hidden population structure and nonrandom sampling.</li>
+        <li class="fragment">Sensitive to uncertainty in population dynamics at high sampling (Boskova et al., 2014)</li>
+        <li class="fragment">Sensitive to hidden population structure and nonrandom sampling.</li>
       </ul>
     </div>
   </div>
@@ -1004,11 +1005,11 @@ reveal:
   <h1>Conclusions</h1>
 
   <ul class="spaced" style="margin-top:10%">
-    <li>Both birth-death and coalescent models probabilistically relate a population's demography to its phylogenetic history.</li>
+    <li class="fragment">Both birth-death and coalescent models probabilistically relate a population's demography to its phylogenetic history.</li>
 
-    <li>Both allow for model-based inference of demographic and epidemiological parameters but may differ in their parameterization.</li>
+    <li class="fragment">Both allow for model-based inference of demographic and epidemiological parameters but may differ in their parameterization.</li>
 
-    <li>Which model to use depends on what assumptions you are willing to make and what you want to infer.</li>
+    <li class="fragment">Which model to use depends on what assumptions you are willing to make and what you want to infer.</li>
   </ul>
 
 </section>
