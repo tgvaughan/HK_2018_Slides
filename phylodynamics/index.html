@@ -551,11 +551,9 @@ reveal:
 
   <div id="bdExample" style="width:1000px; height:500px">
     <script>
-      function simBD() {
-          target = document.getElementById('bdExample');
-
+      function getBDTrace() {
           var lambda = 1.2;
-          var mu = 1.0;
+          var mu = 0.9;
           var tmax=10.0;
 
           var N = [1];
@@ -590,25 +588,87 @@ reveal:
                   N.push(thisN - 1);
           }
 
-          var trace = {x: t, y: N, line: {width: 2, shape: 'hv'}};
+          return {x: t, y: N, mode: 'lines', line: {width: 2, shape: 'hv'}};
+      }
+
+      function singleBDplot() {
+          target = document.getElementById('bdExample');
 
           Plotly.newPlot(target,
-                         [trace],
+                         [getBDTrace()],
                          { 
-                             margin: { t: 0 },
+                             margin: { t: 20 },
                              xaxis: {title: "Time"},
                              yaxis: {title: "Population size"},
                              font: {size: 20}
                          },
                          {displayModeBar: false});
       }
-      simBD();
+
+      singleBDplot();
      
     </script>
     <div style="text-align:right;font-size:0.5em">
-      <a href="" onclick="simBD(); return false;">Regenerate</a>
+      <a href="" onclick="singleBDplot(); return false;">Regenerate</a>
     </div>
   </div>
+</section>
+
+<section>
+  <h1>Example BD dynamics</h1>
+
+  <div id="bdEnsembleTraj" style="width:550px;height:500px;display:inline-block">
+  </div>
+  <div id="bdEnsembleHist" style="width:400px;height:500px;display:inline-block">
+  </div>
+
+  <script>
+    function ensemblePlot() {
+        var traces = [];
+
+        var nTraces = 400;
+        for (var i=0; i<nTraces; i++) {
+            traces.push(getBDTrace());
+            traces[traces.length-1].line.width = 1;
+            traces[traces.length-1].line.color = 'rgb(10,70,70)';
+            traces[traces.length-1].opacity = 0.2;
+        }
+
+        var trajTarget = document.getElementById('bdEnsembleTraj');
+        Plotly.newPlot(trajTarget, traces,
+                       { 
+                           showlegend: false,
+                           margin: { t: 20 },
+                           xaxis: {title: "Time"},
+                           yaxis: {title: "Population size"},
+                           font: {size: 20}
+                       },
+                       {displayModeBar: false});
+
+        var finalSizes = [];
+        for (i=0; i<nTraces; i++) {
+            var finalSize = traces[i].y[traces[i].y.length-1];
+            finalSizes.push(finalSize);
+        }
+
+        var histTarget = document.getElementById('bdEnsembleHist');
+        Plotly.newPlot(histTarget,
+                      [ {x: finalSizes, type: 'histogram'} ],
+                      {
+                          margin: { t: 20, l: 50, r: 0 },
+                           xaxis: {title: "Final pop. size"},
+                          font: {size: 20}
+                      },
+                      {displayModeBar: false});
+    }
+
+    ensemblePlot();
+  </script>
+
+  <div style="text-align:right;font-size:0.5em">
+    <a href="" onclick="ensemblePlot(); return false;">Regenerate</a>
+  </div>
+
 </section>
 
 <section class="center">
