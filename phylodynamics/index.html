@@ -796,13 +796,58 @@ reveal:
 <section>
   <h1>Extention: time-dependence</h1>
 
-  <!-- BDSKY -->
+  <ul>
+    <li>The birth-death skyline model allows piecewise-constant variation in rate parameters.</li>
+  </ul>
+
+  <center>
+  <img data-src="bdsky.png" style="width:80%">
+  </center>
+  <div style="text-align:right">
+    <a href="" class="cite">Stadler et al., 2013</a>
+  </div>
 </section>
+
+<section>
+  <h1>Hepatitis C in Egypt</h1>
+
+  <ul>
+    <li>Effective reproductive number $R_e(t)$ generalizes basic reproductive number $R_0=R_e(0)$.</li>
+    <li>Analysis of 63 sequences, $R_e(t)=\lambda(t)/\mu(t)$.</li>
+  </ul>
+  <img data-src="hcv_bdsky.svg" style="width:100%">
+  <div style="text-align:right">
+    <a href="" class="cite">Stadler et al., 2013</a>
+  </div>
+</section>
+
 
 <section>
   <h1>Extension: structured populations</h1>
 
-  <!-- BDMM -->
+  <ul>
+    <li>Introduced by <a href="" class="cite">K&uuml;hnert et al., 2016</a>.</li>
+    <li>Multi-type birth-death model includes populations consiting of two or more distinct types.</li>
+    <li>Each type may have its own birth, death and sampling rate.</li>
+    <li>Transitions between types occur as the result of additional reactions:
+      <ul>
+        <li><b style="margin-right:3em">Migration:</b> $X_i\overset{\m_{ij}}{\longrightarrow}X_j$</li>
+        <li><b style="margin-right:3em">Inter-type birth:</b> $X_i\overset{\lambda_{ij}}{\longrightarrow}X_i+X_j$</li>
+        </ul></li>
+  </ul>
+</section>
+
+<section>
+  <h1>Seasonal H3N2 dynamics</h1>
+
+  <center>
+  <img data-src="flu_bdmm.svg" style="height:500px">
+  </center>
+  <div style="text-align:right">
+    <a href="" class="cite">K&uuml;hnert et al., 2016</a>
+  </div>
+  
+
 </section>
 
 <section class="center">
@@ -812,10 +857,6 @@ reveal:
 <section class="center">
   <h1>Birth-death vs Coalescent models</h1>
   <h3 class="fragment">How do I choose?</h3>
-</section>
-
-<section>
-  <h1>Hepatitis C in Egypt</h1>
 </section>
 
 <section>
