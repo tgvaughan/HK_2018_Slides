@@ -674,18 +674,81 @@ reveal:
 <section>
   <h1>Birth-death branching process</h1>
 
+  <div class="flipper">
+    <img data-src="bd_branching1.svg">
+    <img data-src="bd_branching2.svg" class="fragment">
+    <img data-src="bd_branching3.svg" class="fragment">
+    <img data-src="bd_branching4.svg" class="fragment">
+    <img data-src="bd_branching5.svg" class="fragment">
+    <img data-src="bd_branching6.svg" class="fragment">
+  </div>
+
+</section>
+
+<section>
+  <h1>Birth-death-sampling process</h1>
+
+  <ul>
+    <li>The birth-death sampling process extends the birth-death process by incorporating a <b>model for sample generation</b>.</li>
+    <li>This can be described using the following reactions:
+      <ul>
+        <li><b style="padding-right:3em">Birth:</b> $X\overset{\lambda}{\longrightarrow}2X$</li>
+        <li><b style="padding-right:3em">Death:</b> $X\overset{\mu}{\longrightarrow}0$</li>
+        <li><b style="padding-right:3em">Sampling (with removal):</b> $X\overset{r\psi}{\longrightarrow}0$</li>
+        <li><b style="padding-right:3em">Sampling without removal:</b> $X\overset{(1-r)\psi}{\longrightarrow}X$</li>
+      </ul>
+  </ul>
+
+  <p>Additionally, the model allows each surviving lineage at the end of the process (present day) to be sampled with probability $\rho$.</p>
 </section>
 
 <section>
   <h1>Birth-death-sampling trees</h1>
+
+  <div class="flipper">
+    <img data-src="bds_trees1.svg">
+    <img data-src="bds_trees2.svg" class="fragment">
+    <img data-src="bds_trees3.svg" class="fragment">
+    <img data-src="bds_trees4.svg" class="fragment">
+    <img data-src="bds_trees5.svg" class="fragment">
+    <img data-src="bds_trees6.svg" class="fragment">
+    <img data-src="bds_trees7.svg" class="fragment">
+    <img data-src="bds_trees8.svg" class="fragment">
+    <img data-src="bds_trees9.svg" class="fragment">
+    <img data-src="bds_trees10.svg" class="fragment">
+
 </section>
 
 <section>
   <h1>Birth-death parameterizations</h1>
+
+  <p>There are several distinct parameterizations, including:</p>
+
+  <ol>
+    <li>Bare reaction rate parameterization:
+      <ul>
+        <li>Birth rate $\lambda$</li>
+        <li>Death/recovery rate $\mu$</li>
+        <li>Sampling rate $\psi$</li>
+
+      </ul>
+    </li>
+    <li style="margin-top:1em">Epidmiological parameterization:
+      <ul>
+        <li>Effective reproductive number $R_e$ ($=\lambda/\mu$)</li>
+        <li>Death/recovery rate $\mu$</li>
+        <li>Sampling proportion $\psi/(\psi+\mu)$</li>
+      </ul></li>
+  </ol>
+
+  <p>Note there are subtly different ways of handling the removal on
+    sampling probability too.</p>
 </section>
 
 <section>
   <h1>Sampled birth-death tree prior</h1>
+
+  
 </section>
 
 <section>
