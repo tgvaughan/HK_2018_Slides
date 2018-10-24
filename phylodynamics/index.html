@@ -514,11 +514,86 @@ reveal:
 
 <section>
   <h1>Extension: population structure</h1>
+
+  <ul>
+    <li>Other forces beyond population dynamics can strongly shape phylogenies.</li>
+  </ul>
+
+  <center>
+    <img data-src="spatial_vs_temporal.png" style="height:400px">
+  </center>
+  <div style="text-align:right">
+    <a href="" class="cite">Grenfell et al., Science 2004</a>
+  </div>
+  
 </section>
 
 <section>
-  <h1>Coalescent summary</h1>
+  <h1>The effect of structure</h1>
+
+  <ul class="spaced">
+    <li>Standard coalescent models assume that all lineages in a tree are exchangeable.</li>
+    <li>Exchangeability here means that any lineages is equally likely to coalesce with any other.</li>
+    <li>Many forms of population structure violate this assumption.</li>
+  </ul>
+
+  <blockquote>
+    $\therefore$ With the right model, we can learn about population structure from phylogenies!
+  </blockquote>
 </section>
+
+<section>
+    <h1>The structured coalescent</h1>
+
+    <div style="display:inline-block;width:49%;vertical-align:middle">
+        <img data-src="structWF_genealogy.svg" style="width:100%">
+    </div><div style="display:inline-block;width:49%;vertical-align:middle;text-align:left">
+        <ul>
+            <li>Backward in time genealogical process corresponding to taking
+                the coalescent limit of a structured WF process.</li>
+        </ul>
+
+        <dl style="margin-top:0.5em">
+            <dt>Coalescence rate in deme $i$:</dt>
+            <dd>$$\binom{k_i}{2}\frac{1}{N_ig}$$</dd>
+            <dt>Lineage migration rate $i\rightarrow j$:</dt>
+            <dd>$$k_i m_{ij}$$</dd>
+        </dl>
+    </div>
+</section>
+
+<section>
+  <h1>Example: H3N2 spatial dynamics</h1>
+
+  <center>
+    <img data-src="h3n2_SC.svg" style="width:65%">
+  </center>
+  <div style="text-align:right">
+    <a href="" class="cite">Vaughan et al., 2014</a>
+  </div>
+</section>
+
+<section>
+  <h1>Bayesian structured coalescent methods</h1>
+
+  <ul class="spaced">
+    <li>MIGRATE <a href="" class="cite">(Beerli, Bioinformatics 2006)</a>
+      <ul><li>Classic MCMC approach but slow for complex migration histories.</li></ul>
+    </li>
+
+    <li>MTT <a href="" class="cite">(Vaughan et al., Bioinformatics 2014)</a>
+      <ul><li>Improved method, still slow. (BEAST 2)</li></ul>
+    </li>
+    <li>BASTA <a href="" class="cite">(De Maio et al., PLoS Genetics 2015)</a>
+      <ul><li>Approximate but faster method. (BEAST 2)</li></ul>
+    </li>
+    <li>MASCOT <a href="" class="cite">(M&uuml;ller et al., MBE 2017)</a>
+      <ul><li>Better approximate method. (BEAST 2)</li></ul>
+    </li>
+  </ul>
+</section>
+
+
 
 <section class="center">
   <h1>Questions?</h1>
@@ -809,7 +884,7 @@ reveal:
 </section>
 
 <section>
-  <h1>Hepatitis C in Egypt</h1>
+  <h1>Example: Hepatitis C in Egypt</h1>
 
   <ul>
     <li>Effective reproductive number $R_e(t)$ generalizes basic reproductive number $R_0=R_e(0)$.</li>
@@ -838,7 +913,7 @@ reveal:
 </section>
 
 <section>
-  <h1>Seasonal H3N2 dynamics</h1>
+  <h1>Example: Seasonal H3N2 dynamics</h1>
 
   <center>
   <img data-src="flu_bdmm.svg" style="height:500px">
@@ -931,7 +1006,7 @@ reveal:
   <ul class="spaced" style="margin-top:10%">
     <li>Both birth-death and coalescent models probabilistically relate a population's demography to its phylogenetic history.</li>
 
-    <li>Both allow for model-based inference of demographic/epidemiological parameters but may differ in their parameterization.</li>
+    <li>Both allow for model-based inference of demographic and epidemiological parameters but may differ in their parameterization.</li>
 
     <li>Which model to use depends on what assumptions you are willing to make and what you want to infer.</li>
   </ul>
